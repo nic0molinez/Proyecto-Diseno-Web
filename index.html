@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+    <div class="formulario">
+        <h1>Inicio de sesion</h1>
+        <form id="loginForm" onsubmit="return redirect()">
+            <div class="username">
+                <input 
+                type="text"
+                id="username"
+                placeholder="Nombre de Usuario" required>
+            </div>
+            <div class="contraseña">
+                <input 
+                type="password" 
+                id="password"
+                placeholder="Contraseña" required>
+            </div>
+            <button type="submit">Iniciar sesion</button>  
+        </form>    
+    </div>
+    <script>
+        function redirect() {
+            var username = document.getElementById("username").value;
+            var password = document.getElementById("password").value;
+            
+            if (username === "admin" && password === "admin") {
+                window.location.href = "index1.html"; 
+                return false;
+            } else {
+                alert("Usuario o contraseña incorrecto.")
+                return false;
+            }
+        }
+    </script>
+
+</body>
+</html>
